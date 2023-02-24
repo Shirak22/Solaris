@@ -1,0 +1,212 @@
+:root{
+    --Orbit-size:30rem;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background: #000;
+    background: linear-gradient(to right, rgb(0, 0, 20),rgb(9, 21, 90));
+}
+
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.solarsystem{
+    border: 2px solid white;
+    position: relative;
+    /* transform: rotate(90deg); */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.planets{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius:50%;
+    transform: translate(-50%,-50%);
+}
+
+.planet__sun{
+    
+    width:calc(var(--Orbit-size));
+    height:calc(var(--Orbit-size));
+        background: radial-gradient(rgb(255, 255, 176) 20%,
+                                    rgb(255, 157, 0) 70%,
+                                    rgb(255, 255, 255) 80%);
+     
+     box-shadow: 0 0 20px 10px rgb(255, 157, 0),
+                 0 0 30px 20px rgba(255, 221, 0, 0.3);
+     
+}
+
+.planet__mercury{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)/2);
+    height:calc(var(--Orbit-size) +  var(--Orbit-size)/2);
+    border: 2px dotted rgba(255, 255, 255,.5);
+}
+
+.planet__mercury::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)/20);
+    height: calc(var(--Orbit-size)/20);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #b7b7b7;
+    border-radius:50%;
+    box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+.planet__venus{
+    width:calc(var(--Orbit-size)*2);
+    height:calc(var(--Orbit-size)*2);
+    border: 2px dotted rgba(255, 255, 255,.5);
+}
+.planet__venus::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)/10);
+    height: calc(var(--Orbit-size)/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #f6f6f6;
+    border-radius:50%;
+    box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.8);
+
+}
+
+
+.planet__earth{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*3/2);
+    height:calc(var(--Orbit-size) + var(--Orbit-size)*3/2);
+    border: 2px dotted rgba(255, 255, 255,.5);
+}
+.planet__earth::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)/10);
+    height: calc(var(--Orbit-size)/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #4882ff;
+    border-radius:50%;
+    box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.8);
+
+}
+
+.planet__mars{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*2);
+    height:calc(var(--Orbit-size) + var(--Orbit-size)*2);
+    border: 2px dotted rgba(255, 255, 255,.5);
+
+}
+.planet__mars::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)/20);
+    height: calc(var(--Orbit-size)/20);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #ff540a;
+    border-radius:50%;
+    box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.8);
+
+}
+
+.planet__Jupiter{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*3);
+    height:calc(var(--Orbit-size) +  var(--Orbit-size)*3);
+    border: 2px dotted rgba(255, 255, 255,.5);
+
+}
+.planet__Jupiter::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)*4/10);
+    height: calc(var(--Orbit-size)*4/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #ffc36e;
+    border-radius:50%;
+    box-shadow: inset -6px 0px 6px rgba(0, 0, 0, 0.8);
+
+}
+.planet__Saturn{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*4);
+    height:calc(var(--Orbit-size) + var(--Orbit-size)*4);
+    border: 2px dotted rgba(255, 255, 255,.5);
+
+}
+.planet__Saturn::before{
+    position: absolute;
+    content: '';
+    width:calc(var(--Orbit-size)*3.5/10);
+    height: calc(var(--Orbit-size)*3.5/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #cbbf95;
+    border-radius:50%;
+    box-shadow: inset -6px 0px 6px rgba(0, 0, 0, 0.8);
+
+}
+
+.planet__Uranus{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*5);
+    height:calc(var(--Orbit-size) + var(--Orbit-size)*5);
+    border: 2px dotted rgba(255, 255, 255,.5);
+
+}
+.planet__Uranus::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)*2/10);
+    height: calc(var(--Orbit-size)*2/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #8ec5ff;
+    border-radius:50%;
+    box-shadow: inset -6px 0px 6px rgba(0, 0, 0, 0.8);
+
+}
+
+
+.planet__Neptun{
+    width:calc(var(--Orbit-size) + var(--Orbit-size)*6);
+    height:calc(var(--Orbit-size) + var(--Orbit-size)*6);
+    border: 2px dotted rgba(255, 255, 255,.5);
+
+}
+.planet__Neptun::before{
+    position: absolute;
+    content: '';
+    width: calc(var(--Orbit-size)*2/10);
+    height: calc(var(--Orbit-size)*2/10);
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #5b7ca0;
+    border-radius:50%;
+    box-shadow: inset -6px 0px 6px rgba(0, 0, 0, 0.8);
+
+}

@@ -1,0 +1,214 @@
+
+                <div class ="solarsystem">
+                    <div class="sun"></div>
+
+                    <div class="planet">
+                        <div class="mercury orbit">
+                            <div class="planet_pos Planet_mercury"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="planet">
+                        <div class="venus orbit">
+                            <div class="planet_pos Planet_venus"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="earth orbit">
+                            <div class="planet_pos Planet_earth"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="mars orbit">
+                            <div class="planet_pos Planet_mars"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="jubiter orbit">
+                            <div class="planet_pos Planet_jubiter"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="saturn orbit">
+                            <div class="planet_pos Planet_saturn"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="uranus orbit">
+                            <div class="planet_pos Planet_uranus"></div>
+                        </div>
+                    </div>
+
+                    <div class="planet">
+                        <div class="neptune orbit">
+                            <div class="planet_pos Planet_neptune"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+/* The solar system ----------------------------------- */
+/* ------- Home page  ----------------------------------- */
+    /* --2D VIEW   */
+
+        .main_container {
+            /* background: rgba(0,0,0,.8); */
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    
+        .solarsystem {
+            --sun-size: 40em;
+            --mercury: 45em;
+            --venus: 50em;
+            --earth: 55em;
+            --mars: 60em;
+            --jubiter: 65em;
+            --saturn: 71em;
+            --uranus: 75em;
+            --neptune: 80em;
+            
+            /* background: rgba(255, 255, 255, 0.21); */
+            width: 32em;
+            height: 32em;
+            position: relative;
+            /* overflow: hidden; */
+        }
+    
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            width: var(--sun-size);
+            height: var(--sun-size);
+            background: radial-gradient(rgb(255, 255, 176) 20%,
+                    rgb(255, 157, 0) 70%,
+                    rgb(255, 255, 255) 80%);
+            box-shadow: 0 0 1em .3em rgb(255, 157, 0);
+    
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: .1em solid rgba(255, 255, 255, .5);
+
+        }
+
+        /* the orbits */
+        .mercury{
+            width: var(--mercury);
+            height: var(--mercury);
+        }
+
+        .venus{
+            width: var(--venus);
+            height: var(--venus);
+        }
+
+        .earth{
+            width: var(--earth);
+            height: var(--earth);
+        }
+
+        .mars{
+            width: var(--mars);
+            height: var(--mars);
+        }
+        .jubiter{
+            width: var(--jubiter);
+            height: var(--jubiter);
+        }
+
+        .saturn{
+            width: var(--saturn);
+            height: var(--saturn);
+        }
+        .uranus{
+            width: var(--uranus);
+            height: var(--uranus);
+        }
+
+        .neptune{
+            width: var(--neptune);
+            height: var(--neptune);
+        }
+
+
+        /* the planets */
+        .planet_pos{
+            position: absolute; 
+            top:50%; 
+            left: 100%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: inset  -.3em 0 .4em black;
+        }
+
+        .Planet_mercury{
+          
+            width: .4em;
+            height: .4em;
+            background: #aaa;
+
+        }
+
+        .Planet_venus{
+            width: 1em;
+            height: 1em;
+            background: #c6b0b0;
+        }
+
+        .Planet_earth{
+            width: 1em;
+            height: 1em;
+            background: #3d87ff;
+        }
+
+        .Planet_mars{
+            width: .4em;
+            height: .4em;
+            background: #ff6842;
+        }
+        .Planet_jubiter{
+            width: 3em;
+            height: 3em;
+            background: #e69956;
+        }
+
+        .Planet_saturn{
+            width: 2em;
+            height: 2em;
+            background: #aba667;
+        }
+        .Planet_uranus{
+            width: 1em;
+            height: 1em;
+            background: #aabfed;
+        }
+
+        .Planet_neptune{
+            width: 1em;
+            height: 1em;
+            background: #3c5575;
+        }
+
+
+

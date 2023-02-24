@@ -8,11 +8,48 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+    <section data-popup class="popup">
+        <section class="popup__container">
+            <section data-popup-card class="popup__card">
+                    <!-- popup card render -->
+            </section>
+            <section class="popup__pagination">
+                <button data-previous class="popup__btn-prev">Prev</button>
+                <button  data-next class="popup__btn-next">Next</button>
+            </section>
 
 
 
 
-    <script src="js/index.js"></script>
+        </section>
+    </section>
+
+
+
+<div class="wrapper">
+        <header class="header ">
+                <section class="header__logo">
+                    <h1 class="header__logo-title">SOLSYSTEMET</h1>
+                    <h2 class="header__logo-latinName">SOLARIS</h2>
+                </section>
+                <section class="search">
+                    <input type="text"  class="search_bar" data-search placeholder="Search planet..">
+                    <ul class="search__suggestion" data-searchSuggestion ></ul>
+                </section>
+        </header>
+        
+        <main class="main_container">
+            <section class="solarsystem">
+                <section data-planets class="planets">
+                        <!-- planets render -->
+                </section>
+               
+            </section>
+        </main>
+
+    </div>
+
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
