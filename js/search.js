@@ -71,7 +71,7 @@ function popUp(searchedPlanetID,Arr) {
 function Pagnition(card,data){
     let preButton = document.querySelector('[data-previous]'); 
     let nextButton = document.querySelector('[data-next]'); 
-    let counter = 0 ; 
+    let counter = 0; 
     
         preButton.addEventListener('click', ()=>{
             card.innerHTML = ''; 

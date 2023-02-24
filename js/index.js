@@ -3,19 +3,42 @@ import {search,renderSuggestionsList,popUp} from "./search.js";
 let URL_API = 'https://majazocom.github.io/Data/solaris.json';
 
 
-
 // fetching function that return data from Planet API 
 async function fetchPlanets(){
+    
+    try {
+        
+        let response = await fetch(URL_API);
+        if(!response.ok){
+            let message = `${response.status}`; 
+            throw message;
+        }else{
+            let data = await response.json();
+            return data;
+        }
 
-    try{
-        let response = await fetch(URL_API); 
-        let data = await response.json();
-        console.log(response);
-        return data;
+    } catch(err){
+        let errorMessage = ''; 
+        switch(parseInt(err)){
+            case 404: 
+            errorMessage = `The JSON file not found `;
+            break;
 
-    }catch(error){
-        console.log(error);
+            case 401: 
+            errorMessage = `Unauthorized `;
+            break
+
+        }
+        document.querySelector('.main_container').innerHTML = `
+            <h1 class="error">${err}.. ${errorMessage} </h1>
+
+        `
+            ;
+
+        document.querySelector('.main_container').classList.add('error_mode');
+
     }
+    
 
     
 
@@ -23,8 +46,14 @@ async function fetchPlanets(){
 
 async function setup(){
     let data = await fetchPlanets();
-    search(data);
-    renderPlanetsUI(data);
+        try{
+            search(data);
+            renderPlanetsUI(data);
+        }catch{
+            return
+        }
+        
+   
 }
 
 function renderPlanetsUI(dataArray){
