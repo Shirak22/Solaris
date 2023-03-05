@@ -1,0 +1,191 @@
+
+.main_container{
+        width: 100%;
+        height: 100%;
+        /* display: none; */
+}
+
+.solarsystem{
+    display: flex; 
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.planets{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex:1;
+    width: 100%;
+    height: 100%;
+}
+
+.planet{
+    margin: 0;
+    border-radius: 50%;
+    box-shadow: inset -.5rem 0 1rem black;
+    transition: transform .3s ease-in-out  ;
+    animation: shaking 5s 1s alternate infinite;
+    transition: .3s;
+}
+
+@keyframes shaking {
+    0%,100% {transform: translate(-1rem,1rem);}
+     50%{transform: translate(0rem,2rem);}
+}
+.planet:hover{
+    cursor: pointer;
+    animation: none;
+    transform:scale(3);
+    transition: .3s;
+}
+
+.solarsystem__Solen{
+    width: 40rem;
+    height: 80rem;
+    border-radius: 0 80rem 80rem 0  ;
+    background: rgb(255, 157, 0);
+    /* background: radial-gradient(rgb(255, 255, 176) 20%,
+            rgb(255, 157, 0) 70%,
+            rgb(255, 255, 255) 80%); */
+            margin-left:-20rem;
+    box-shadow: 10px 0 1rem .3rem rgb(255, 157, 0);
+    background-image: url('../Assets/Texture/2k_mercury.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+ 
+}
+.solarsystem__Merkurius{
+    width: 1rem;
+    height: 1rem;
+    background: #888888;
+    background-image: url('../Assets/Texture/2k_mercury.jpg');
+    box-shadow: inset -.1rem 0 .2rem black;
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .3s;
+}
+.solarsystem__Venus{
+    width: 2rem;
+    height: 2rem;
+    background: #888888;
+    box-shadow: inset -.3rem 0 .5rem black;
+    background-image: url('../Assets/Texture/2k_venus_surface.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .2s;
+}
+
+.solarsystem__Jorden{
+    width: 2rem;
+    height: 2rem;
+    background: #47a6ff;
+    background-image: url('../Assets/Texture/2k_earth_daymap.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .4s;
+}
+
+.solarsystem__Mars{
+    width: 1rem;
+    height: 1rem;
+    background: #f75b5b;
+    background-image: url('../Assets/Texture/2k_mars.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    box-shadow: inset -.3rem 0 .5rem black;
+    animation-delay: .1s;
+}
+
+.solarsystem__Jupiter{
+    width: 7rem;
+    height: 7rem;
+    background:  #b7875f;
+    background-image: url('../Assets/Texture/2k_jupiter.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .7s;
+}
+
+.solarsystem__Saturnus{
+    position: relative; 
+    width: 4rem;
+    height: 4rem;
+    background: #8a7b6b;
+    background-image: url('../Assets/Texture/2k_saturn.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    transform-style: preserve-3d;
+    animation-delay: .2s;
+}
+
+.solarsystem__Saturnus::before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateX(75deg) rotateY(30deg);
+    width: 6rem;
+    height: 6rem;
+    background: transparent;
+    border: 1.5rem solid #ac9b89;
+    border-radius: 50%;
+
+    background-image: url('../Assets/Texture/2k_saturn_ring_alpha.png');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: hard-light;
+    
+}
+
+.solarsystem__Uranus{
+    width: 2rem;
+    height: 2rem;
+    background: #446d8f;
+    background-image: url('../Assets/Texture/2k_uranus.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .1s;
+}
+
+.solarsystem__Neptunus{
+    width: 2rem;
+    height: 2rem;
+    background: #7b9edb;
+    margin-right: 2rem;
+    background-image: url('../Assets/Texture/2k_neptune.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-blend-mode: soft-light;
+    animation-delay: .6s;
+}
+
+@media only screen and (max-width:970px ) {
+    .solarsystem__Solen{
+        width: 30rem;
+        height: 60rem;
+        margin-left:-20rem;
+    }
+}
+
+
+@media only screen and (max-width:600px ) {
+    .solarsystem__Solen{
+        width: 20rem;
+        height: 40rem;
+        margin-left:-10rem;
+    }
+}
+
+
+
+

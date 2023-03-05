@@ -1,3 +1,15 @@
+:root{
+    --sun-size: 10em;
+    --Merkurius-orbit: 3em;
+    --Venus-orbit:6em;
+    --Jorden-orbit:12em;
+    --Mars-orbit:18em;
+    --Jupiter-orbit:27em;
+    --Saturnus-orbit:40em;
+    --Uranus-orbit:48em;
+    --Neptunus-orbit:53em;
+
+}
 
 *{
     box-sizing: border-box;
@@ -28,7 +40,6 @@ body{
     margin: 0 auto;
     position: relative;
     height: 100vh;
-    max-width: 1440px;
     background: linear-gradient(to right, rgb(0, 0, 20),rgb(9, 41, 90));
 
 }
@@ -239,193 +250,331 @@ body{
 /* Pop up section ----------------------------------- */
 
 
-.main_container{
-        width: 100%;
-        height: 100%;
-        /* display: none; */
-}
-
-.solarsystem{
-    display: flex; 
-    height: 100%;
-    overflow: hidden;
-
-}
-
-.planets{
+#universe {
+    font-size:10px;
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex:1;
-    width: 100%;
+    transition: all 2s;
     height: 100%;
+
 }
 
-.planet{
-    margin: 0;
-    border-radius: 50%;
-    box-shadow: inset -.5rem 0 1rem black;
-    transition: transform .3s ease-in-out  ;
-    animation: shaking 5s 1s alternate infinite;
-    transition: .3s;
+.solarsystem {
+    width: 64em;
+    height: 64em;
+    position: relative;
+    transform-style:preserve-3d;
+    transform: rotateX(70deg);
+    transition: all 2s;
 }
 
-@keyframes shaking {
-    0%,100% {transform: translate(-1rem,1rem);}
-     50%{transform: translate(0rem,2rem);}
-}
-.planet:hover{
-    cursor: pointer;
-    animation: none;
-    transform:scale(3);
-    transition: .3s;
-}
 
-.solarsystem__Solen{
-    width: 40rem;
-    height: 80rem;
-    border-radius: 0 80rem 80rem 0  ;
-    background: rgb(255, 157, 0);
-    /* background: radial-gradient(rgb(255, 255, 176) 20%,
-            rgb(255, 157, 0) 70%,
-            rgb(255, 255, 255) 80%); */
-            margin-left:-20rem;
-    box-shadow: 10px 0 1rem .3rem rgb(255, 157, 0);
-    background-image: url('../Assets/Texture/2k_mercury.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
- 
-}
-.solarsystem__Merkurius{
-    width: 1rem;
-    height: 1rem;
-    background: #888888;
-    background-image: url('../Assets/Texture/2k_mercury.jpg');
-    box-shadow: inset -.1rem 0 .2rem black;
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .3s;
-}
-.solarsystem__Venus{
-    width: 2rem;
-    height: 2rem;
-    background: #888888;
-    box-shadow: inset -.3rem 0 .5rem black;
-    background-image: url('../Assets/Texture/2k_venus_surface.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .2s;
-}
 
-.solarsystem__Jorden{
-    width: 2rem;
-    height: 2rem;
-    background: #47a6ff;
-    background-image: url('../Assets/Texture/2k_earth_daymap.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .4s;
-}
-
-.solarsystem__Mars{
-    width: 1rem;
-    height: 1rem;
-    background: #f75b5b;
-    background-image: url('../Assets/Texture/2k_mars.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    box-shadow: inset -.3rem 0 .5rem black;
-    animation-delay: .1s;
-}
-
-.solarsystem__Jupiter{
-    width: 7rem;
-    height: 7rem;
-    background:  #b7875f;
-    background-image: url('../Assets/Texture/2k_jupiter.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .7s;
-}
-
-.solarsystem__Saturnus{
-    position: relative; 
-    width: 4rem;
-    height: 4rem;
-    background: #8a7b6b;
-    background-image: url('../Assets/Texture/2k_saturn.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    transform-style: preserve-3d;
-    animation-delay: .2s;
-}
-
-.solarsystem__Saturnus::before{
+#Solen{
     position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) rotateX(75deg) rotateY(30deg);
-    width: 6rem;
-    height: 6rem;
-    background: transparent;
-    border: 1.5rem solid #ac9b89;
+    top: 50%; 
+    left:50%;
+    transform:translate(-50%,-50%) rotateX(-70deg); 
+    height: var(--sun-size);
+    width: var(--sun-size);
     border-radius: 50%;
 
-    background-image: url('../Assets/Texture/2k_saturn_ring_alpha.png');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: hard-light;
+    background: radial-gradient(rgb(255, 235, 144) 50%,rgb(255, 205, 41) 70%);
+    box-shadow: inset -1em -1em 1em rgba(0, 0, 0, .2),
+                        0 0 3em rgb(255, 177, 41);
+
+                transition: all 2s;
+                    }
+/* Info section  */
+.info {
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:-21em;
+    color: rgba(255,255,255,.2);
+    margin: 0;
+    white-space:nowrap;
+    transition: all 2s;
+    text-align: center;
+    padding: 0;
+    transform: translate(-20%,0);
+}
+
+.info p{
+    display: block;
+    font-size: 16px;
+    margin: 0;
     
 }
 
-.solarsystem__Uranus{
-    width: 2rem;
-    height: 2rem;
-    background: #446d8f;
-    background-image: url('../Assets/Texture/2k_uranus.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .1s;
+.orbit{
+    position: absolute;
+    top: 50%; 
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+    border: .01em solid rgba(255,255,255,.3);
+    animation: Orbiting var(--orbit-speed)  linear infinite;
+    animation-play-state:running;
+}
+.planet{
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+
+}
+.planet::before{
+    position: absolute;
+    content: '';
+    top:0;
+    color: #fff;
+    left: 50%;
+    width: .1em ;
+    height: 17em;
+    transform-origin: bottom;
+    transform: translate(0%,-100%) rotateZ(3deg);
+    border-left: .1em solid rgba(255,255,255,.2);
+}
+.position {
+    
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform-style: preserve-3d;
+    animation: position-stabalization var(--orbit-speed)  linear infinite reverse;
+    animation-play-state:running;
 }
 
-.solarsystem__Neptunus{
-    width: 2rem;
-    height: 2rem;
-    background: #7b9edb;
-    margin-right: 2rem;
-    background-image: url('../Assets/Texture/2k_neptune.jpg');
-    background-size: cover;
-    background-repeat: none;
-    background-blend-mode: soft-light;
-    animation-delay: .6s;
+
+/* planet orbit */
+/* Merkurius */
+#Merkurius{
+    --orbit-speed:5s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Merkurius-orbit));
+    height: calc(var(--sun-size) + var(--Merkurius-orbit));
+
 }
 
-@media only screen and (max-width:970px ) {
-    .solarsystem__Solen{
-        width: 30rem;
-        height: 60rem;
-        margin-left:-20rem;
-    }
+.Merkurius{
+    --size:1em; 
+    background-color: #888888;
+
+}
+
+.Merkurius .info{
+    display: none;
+}
+
+/* Venus */
+#Venus{
+    --orbit-speed:13s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Venus-orbit));
+    height: calc(var(--sun-size) + var(--Venus-orbit));
+
+}
+
+.Venus{
+    --size:2em; 
+    background-color: #E7CDCD;
+}
+
+.Venus .info{
+    display: block;
 }
 
 
-@media only screen and (max-width:600px ) {
-    .solarsystem__Solen{
-        width: 20rem;
-        height: 40rem;
-        margin-left:-10rem;
-    }
+/* Jorden */
+#Jorden{
+    --orbit-speed:12s;
+    --moon-orbit: 3.5em;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Jorden-orbit));
+    height: calc(var(--sun-size) + var(--Jorden-orbit));
+    
+}
+
+.Jorden{
+    --size:2em;
+    background-color: rgb(99, 182, 255);
+}
+
+.Jorden .info{
+    display: block;
+}
+
+/* Moon */
+#moon{
+    --size: .5em;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:  var(--moon-orbit); 
+    height: var(--moon-orbit); 
+    border-radius: 50%;
+    animation: Orbiting-moon 1s linear infinite;
+
+}
+
+.moon{
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    content: '';
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #eee;
+    animation: position-stabalization 1s  linear infinite reverse;
+
 }
 
 
 
+
+/* Mars */
+#Mars{
+    --orbit-speed:10s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Mars-orbit));
+    height: calc(var(--sun-size) + var(--Mars-orbit));
+
+}
+
+.Mars{
+    --size:.5em; 
+    background-color: #EF5F5F ;
+}
+
+.Mars .info{
+    display: block;
+}
+
+
+/* Jupitur */
+#Jupiter{
+    --orbit-speed:15s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Jupiter-orbit));
+    height: calc(var(--sun-size) + var(--Jupiter-orbit));
+
+}
+
+.Jupiter{
+    --size:6em; 
+    background-color: #E29468;
+}
+
+.Jupiter .info{
+    display: block;
+}
+
+/* Saturnus */
+#Saturnus{
+    --orbit-speed:20s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Saturnus-orbit));
+    height: calc(var(--sun-size) + var(--Saturnus-orbit));
+
+}
+
+.Saturnus{
+    --size:4em; 
+    background-color: #C7AA72;
+}
+.Saturnus_ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:4.5em ;
+    height: 4.5em;
+    transform: translate(-50%,-50%) rotateX(90deg) rotateY(15deg);
+    border-radius: 50%;
+    content: '';
+    background: none;
+    border: 1em solid rgba(255,255,255,.4);
+    box-sizing: content-box;
+}
+.Saturnus .info{
+    display: block;
+}
+
+
+/* Uranus */
+#Uranus{
+    --orbit-speed:30s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Uranus-orbit));
+    height: calc(var(--sun-size) + var(--Uranus-orbit));
+}
+
+.Uranus{
+    --size:2em; 
+    background-color: #C9D4F1;
+}
+
+.Uranus .info{
+    display: block;
+}
+
+/* Neptunus */
+#Neptunus{
+    --orbit-speed:40s;
+    transform-style: preserve-3d;
+    width: calc(var(--sun-size) + var(--Neptunus-orbit));
+    height: calc(var(--sun-size) + var(--Neptunus-orbit));
+
+}
+
+.Neptunus{
+    --size:2em; 
+    background-color: #7A91A7;
+}
+
+.Neptunus .info{
+    display: block;
+}
+
+
+
+
+.Merkurius{z-index: 1;}
+.Venus{z-index: 2;}
+.Jorden{z-index: 4;}
+.Mars{z-index: 5;}
+.Jupiter{z-index: 6;}
+.Saturnus{z-index: 7;}
+.Uranus{z-index: 8;}
+.Neptunus{z-index: 9;}
+
+/* Solar System Animation  */
+@keyframes Orbiting {
+    0% { transform:translate(-50%,-50%) rotateZ(0deg); }
+
+    100% {
+        transform:translate(-50%,-50%) rotateZ(360deg);}
+}
+
+@keyframes position-stabalization {
+    0% { transform:translate(-50%,-50%) rotateX(-90deg) rotateY(360deg);}
+
+    100% {
+        transform:translate(-50%,-50%) rotateX(-90deg) rotateY(0deg) ;}
+}
+
+@keyframes Orbiting-moon {
+    0% { transform:translate(-50%,-50%) rotateX(90deg) rotateZ(0deg);}
+
+    100% {
+        transform:translate(-50%,-50%) rotateX(90deg) rotateZ(360deg);}
+}
 
