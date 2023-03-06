@@ -31,7 +31,6 @@
 }
 
 body{
-    background: #000;
     background: linear-gradient(to right, rgb(0, 0, 20),rgb(5, 24, 52));
 
 }
@@ -40,7 +39,7 @@ body{
     margin: 0 auto;
     position: relative;
     height: 100vh;
-    background: linear-gradient(to right, rgb(0, 0, 20),rgb(9, 41, 90));
+    background: linear-gradient(to right, rgb(0, 0, 20),rgb(6, 40, 62));
 
 }
 
@@ -249,6 +248,57 @@ body{
 }
 /* Pop up section ----------------------------------- */
 
+.navbar{
+   
+    position: fixed;
+    bottom: 2rem;
+    right: 0;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(0,0,0,.3);
+    max-width: 440px;
+    background: linear-gradient(to right, rgb(27, 82, 131), rgb(5, 42, 76));
+
+    transition:all 1s;
+}
+
+.navbar button {
+    margin: .2rem 0;
+    padding: .5rem;
+    font-size: 1rem;
+    background: rgb(162, 192, 222);
+    outline: none;
+    border: none;
+    border-radius: 1em;
+}
+
+.navbar button:hover{
+    background-color:rgb(150, 178, 206) ;
+    transform: scale(1.04);
+    transition:all .4s;
+}
+.navbar label {
+    color: #eee;
+    text-align: center;
+}
+
+footer{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 1rem;
+}
+.footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgba(255,255,255,.2);
+}
+
 
 #universe {
     font-size:10px;
@@ -337,7 +387,7 @@ body{
     height: 17em;
     transform-origin: bottom;
     transform: translate(0%,-100%) rotateZ(3deg);
-    border-left: .1em solid rgba(255,255,255,.2);
+    border-left: .1em dashed rgba(255,255,255,.2);
 }
 .position {
     
@@ -367,7 +417,7 @@ body{
 }
 
 .Merkurius .info{
-    display: none;
+    display: block;
 }
 
 /* Venus */
@@ -382,6 +432,9 @@ body{
 .Venus{
     --size:2em; 
     background-color: #E7CDCD;
+    background-image: url('../Assets/Texture/2k_venus_surface.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Venus .info{
@@ -402,6 +455,9 @@ body{
 .Jorden{
     --size:2em;
     background-color: rgb(99, 182, 255);
+    background-image: url('../Assets/Texture/2k_earth_daymap.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Jorden .info{
@@ -453,6 +509,9 @@ body{
 .Mars{
     --size:.5em; 
     background-color: #EF5F5F ;
+    background-image: url('../Assets/Texture/2k_mars.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Mars .info{
@@ -472,6 +531,9 @@ body{
 .Jupiter{
     --size:6em; 
     background-color: #E29468;
+    background-image: url('../Assets/Texture/2k_jupiter.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Jupiter .info{
@@ -490,6 +552,9 @@ body{
 .Saturnus{
     --size:4em; 
     background-color: #C7AA72;
+    background-image: url('../Assets/Texture/2k_saturn.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 .Saturnus_ring{
     position: absolute;
@@ -503,6 +568,9 @@ body{
     background: none;
     border: 1em solid rgba(255,255,255,.4);
     box-sizing: content-box;
+    background-image: url('../Assets/Texture/2k_saturn_ring_alpha.png');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 .Saturnus .info{
     display: block;
@@ -520,6 +588,9 @@ body{
 .Uranus{
     --size:2em; 
     background-color: #C9D4F1;
+    background-image: url('../Assets/Texture/2k_uranus.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Uranus .info{
@@ -538,6 +609,9 @@ body{
 .Neptunus{
     --size:2em; 
     background-color: #7A91A7;
+    background-image: url('../Assets/Texture/2k_neptune.jpg');
+    background-size: cover;
+    background-blend-mode: soft-light;
 }
 
 .Neptunus .info{

@@ -7,8 +7,8 @@ let btnSpeed = document.querySelector('#btn-speed');
 let btnSize = document.querySelector('#btn-size');
 let btnDistance = document.querySelector('#btn-distance');
 let input = document.querySelector('#zoom');
+let URL_API = 'solaris.json';
 
-let URL_API = 'https://majazocom.github.io/Data/solaris.json';
 
 
 // fetching function that return data from Planet API 
@@ -58,6 +58,7 @@ async function setup(){
             search(data);
             renderPlanets(await data);
             resetDefault(await data);
+            
             btnSpeed.addEventListener('click',()=>{
                 compareSpeeds(data);
             }); 
@@ -72,34 +73,15 @@ async function setup(){
         
             input.addEventListener('input',(e)=>{
                 setCss('font-size',`${input.value}px`, '#universe');
-                console.log(input.value);
+                
             }); 
             // renderPlanetsUI(data);
+           
         }catch{
             return
         }
         
    
-}
-
-function renderPlanetsUI(dataArray){
-    let planetsHTML = document.querySelector('[data-planets]'); 
-        planetsHTML.innerHTML = ''; 
-        dataArray.forEach(planet => {
-            // planetsHTML.innerHTML += `<div data-id="${planet.id}" class="planet solarsystem__${planet.name}"></div> `
-            
-            let div = document.createElement('div'); 
-            div.setAttribute('data-id',planet.id); 
-            div.setAttribute('class',`planet solarsystem__${planet.name}` );
-            div.addEventListener('click',()=>{
-                popUp(planet.id,dataArray);
-            })
-    
-            planetsHTML.appendChild(div);
-        });
-
-
-    
 }
 
 
@@ -166,7 +148,7 @@ function resetDefault(planets){
        orbit += 10 ;
        setCss(planetVar,`${orbit}em`,`:root`);
       }
-      //reset Sizes 
+      //reset planets Sizes 
       setCss('--sun-size',`20em`,`:root`);
       setCss('--size',`1em`,`.Merkurius`);
       setCss('--size',`3em`,`.Venus`);
@@ -181,7 +163,7 @@ function resetDefault(planets){
     
 }
 
-
+//convert the distance from the sun by the scale 1:30000000
 function convertOrbit(dist){
    let scale = 1/30000000; 
    return (dist*scale).toFixed(2); 
@@ -207,7 +189,7 @@ function cardHtml(planet){
                <aside id="moon"><aside class="moon"></aside></aside>
                <article data-planet class="${planet.name} planet">
                    <aside class="info">
-                       <p>${planet.name}</p> 
+                       <p>${planet.name}</br> dist: ${planet.distance/1000000}mkm</p> 
                    </aside>
                </article>
            </article>
@@ -224,7 +206,7 @@ function cardHtml(planet){
               <aside class="Saturnus_ring"></aside>
                <article data-planet class="${planet.name} planet">
                    <aside class="info">
-                       <p>${planet.name}</p> 
+                       <p>${planet.name} <b></br> dist: ${planet.distance/1000000}</b> mkm </p> 
                    </aside>
                </article>
            </article>
@@ -237,7 +219,7 @@ function cardHtml(planet){
            <article class="position">
                <article data-planet class="${planet.name} planet">
                    <aside class="info">
-                       <p>${planet.name}</p> 
+                       <p>${planet.name} <b></br>dist: ${planet.distance/1000000}</b> mkm</p> 
                    </aside>
                </article>
            </article>

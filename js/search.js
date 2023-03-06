@@ -119,7 +119,7 @@ function popUpHTML(planet) {
                 </article>
                 <article>
                     <h3>KM FRÅN SOLEN</h3>
-                    <p>149 600 000 km</p>
+                    <p>${planet.distance} km</p>
                 </article>
                 <article>
                     <h3>MIN TEMPERATUR</h3>
