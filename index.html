@@ -38,19 +38,28 @@
                     <ul class="search__suggestion" data-searchSuggestion ></ul>
                 </section>
         </header>
+        <nav class="navbar"> 
+            <button id="btn-speed"> Speed</button>
+            <button id="btn-size"> Size</button>
+            <button id="btn-distance">Distance</button>
+            <label name="slider">zoom</label>
+            <input name="slider" type="range" id="zoom" min="2" max="16" value="1">
+            
+        </nav>
         
-        <main class="main_container ">
-            <section class="solarsystem">
-                <section data-planets class="planets">
-                        <!-- planets render -->
-                        
-                </section>
-               
-            </section>
-        </main>
+    <section id="universe">
+        <section data-solarsystem class="solarsystem">
+            <article id="sun"><article class="sun"></article></article>
+            
+        </section>
+    </section>
+
 
 </div>
-
+    <footer >
+        <h2 class="footer">Solaris</h2>
+        <h3 class="footer">By Shirak Soghomonian</h3>
+    </footer>
     <script type="module" src="js/index.js"></script>
 </body>
 </html>
